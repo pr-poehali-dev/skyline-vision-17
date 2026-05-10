@@ -18,12 +18,12 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
                 isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
               }`}
             >
-              <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
-                Phantom
+              <h2 className="mb-3 font-sans text-3xl font-bold uppercase leading-[1.05] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
+                Built
                 <br />
-                Client
+                for the
                 <br />
-                <span className="text-foreground/40">для Minecraft</span>
+                <span className="text-primary">elite.</span>
               </h2>
             </div>
 
@@ -33,11 +33,11 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                PhantomClient — это чит-клиент нового поколения для Minecraft Java Edition. Разрабатывается опытной командой с глубоким знанием игровых механик и античит-систем.
+              <p className="max-w-md text-sm leading-relaxed text-foreground/80 md:text-lg">
+                Expensive isn't just another client. It's a statement. Engineered by veteran developers with deep knowledge of Minecraft internals and anticheat systems.
               </p>
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Обновления выходят регулярно. Обход античита поддерживается в актуальном состоянии — ты всегда на шаг впереди.
+              <p className="max-w-md text-sm leading-relaxed text-foreground/80 md:text-lg">
+                Daily updates. Patched within hours. Supported on every major server. You pay for the best — you get the best.
               </p>
             </div>
           </div>
@@ -45,9 +45,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           {/* Right side - Stats with creative layout */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
-              { value: "50+", label: "Модулей", sublabel: "PvP, Visual, Movement, Bypass", direction: "right" },
-              { value: "5000+", label: "Игроков", sublabel: "Доверяют PhantomClient", direction: "left" },
-              { value: "99%", label: "Uptime", sublabel: "Стабильная работа сервера лицензий", direction: "right" },
+              { value: "120+", label: "Modules", sublabel: "Combat, Visual, Movement, Bypass", direction: "right" },
+              { value: "25K+", label: "Users", sublabel: "Active premium subscribers worldwide", direction: "left" },
+              { value: "24/7", label: "Support", sublabel: "Discord staff online round the clock", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) {
@@ -59,16 +59,16 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               return (
                 <div
                   key={i}
-                  className={`flex items-baseline gap-4 border-l border-foreground/30 pl-4 transition-all duration-700 md:gap-8 md:pl-8 ${getRevealClass()}`}
+                  className={`flex items-baseline gap-4 border-l-2 border-primary/60 pl-4 transition-all duration-700 md:gap-8 md:pl-8 ${getRevealClass()}`}
                   style={{
                     transitionDelay: `${300 + i * 150}ms`,
                     marginLeft: i % 2 === 0 ? "0" : "auto",
                     maxWidth: i % 2 === 0 ? "100%" : "85%",
                   }}
                 >
-                  <div className="text-3xl font-light text-foreground md:text-6xl lg:text-7xl">{stat.value}</div>
+                  <div className="font-sans text-3xl font-bold text-primary md:text-6xl lg:text-7xl">{stat.value}</div>
                   <div>
-                    <div className="font-sans text-base font-light text-foreground md:text-xl">{stat.label}</div>
+                    <div className="font-sans text-base font-bold uppercase tracking-wider text-foreground md:text-xl">{stat.label}</div>
                     <div className="font-mono text-xs text-foreground/60">{stat.sublabel}</div>
                   </div>
                 </div>
@@ -84,10 +84,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "750ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Купить лицензию
+            Get Premium
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            Смотреть возможности
+            See Features
           </MagneticButton>
         </div>
       </div>

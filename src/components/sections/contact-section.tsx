@@ -43,17 +43,17 @@ export function ContactSection() {
                 isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
               }`}
             >
-              <h2 className="mb-2 font-sans text-4xl font-light leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
-                Купить
+              <h2 className="mb-2 font-sans text-4xl font-bold uppercase leading-[1.0] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
+                Get
                 <br />
-                доступ
+                <span className="text-primary">Access.</span>
               </h2>
-              <p className="font-mono text-xs text-foreground/60 md:text-base">/ Оформить лицензию</p>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary md:text-sm">// Purchase license</p>
             </div>
 
             <div className="space-y-4 md:space-y-8">
               <a
-                href="mailto:support@phantomclient.ru"
+                href="mailto:support@expensive.lol"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
                 }`}
@@ -64,7 +64,7 @@ export function ContactSection() {
                   <span className="font-mono text-xs text-foreground/60">Email</span>
                 </div>
                 <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
-                  support@phantomclient.ru
+                  support@expensive.lol
                 </p>
               </a>
 
@@ -78,7 +78,7 @@ export function ContactSection() {
                   <MapPin className="h-3 w-3 text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Discord</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">discord.gg/phantomclient</p>
+                <p className="text-base text-foreground md:text-2xl">discord.gg/expensive</p>
               </div>
 
               <div
@@ -87,7 +87,7 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                {["Telegram", "Discord", "VK", "YouTube"].map((social) => (
+                {["Discord", "Telegram", "Twitter", "YouTube"].map((social) => (
                   <a
                     key={social}
                     href="#"
@@ -109,13 +109,13 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Никнейм в Minecraft</label>
+                <label className="mb-1 block font-mono text-xs uppercase tracking-[0.2em] text-primary md:mb-2">Minecraft Username</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
+                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-primary focus:outline-none md:py-2 md:text-base"
                   placeholder="Steve123"
                 />
               </div>
@@ -126,13 +126,13 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "350ms" }}
               >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Email</label>
+                <label className="mb-1 block font-mono text-xs uppercase tracking-[0.2em] text-primary md:mb-2">Email</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
+                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-primary focus:outline-none md:py-2 md:text-base"
                   placeholder="your@email.com"
                 />
               </div>
@@ -143,14 +143,14 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Нужный тариф</label>
+                <label className="mb-1 block font-mono text-xs uppercase tracking-[0.2em] text-primary md:mb-2">Selected Plan</label>
                 <textarea
                   rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="Например: Пробный на 3 дня или Пожизненный..."
+                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-primary focus:outline-none md:py-2 md:text-base"
+                  placeholder="Daily / Monthly / Yearly / Lifetime..."
                 />
               </div>
 
@@ -165,10 +165,10 @@ export function ContactSection() {
                   size="lg"
                   className="w-full disabled:opacity-50"
                 >
-                  {isSubmitting ? "Отправка..." : "Оформить заказ"}
+                  {isSubmitting ? "Processing..." : "Purchase License"}
                 </MagneticButton>
                 {submitSuccess && (
-                  <p className="mt-3 text-center font-mono text-sm text-foreground/80">Сообщение отправлено!</p>
+                  <p className="mt-3 text-center font-mono text-sm text-primary">Order received! Check your email.</p>
                 )}
               </div>
             </form>

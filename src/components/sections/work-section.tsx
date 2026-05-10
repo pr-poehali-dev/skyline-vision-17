@@ -14,34 +14,41 @@ export function WorkSection() {
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Возможности
+          <h2 className="mb-2 font-sans text-5xl font-bold uppercase tracking-tight text-foreground md:text-6xl lg:text-7xl">
+            Features
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Что умеет PhantomClient</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary md:text-sm">// What's inside</p>
         </div>
 
         <div className="space-y-6 md:space-y-8">
           {[
             {
               number: "01",
-              title: "KillAura & Reach",
-              category: "Боевые модули с настройкой CPS и радиуса атаки",
-              year: "PvP",
+              title: "Smooth Bypass",
+              category: "Hypixel, Verox, Sunrise, NoCheatPlus, Grim, Vulcan",
+              year: "Bypass",
               direction: "left",
             },
             {
               number: "02",
-              title: "ESP & Wallhack",
-              category: "Видишь игроков и мобов сквозь стены",
+              title: "Premium Visuals",
+              category: "Custom HUD, ESP, ChestESP, ItemPhysics, Animations",
               year: "Visual",
               direction: "right",
             },
             {
               number: "03",
-              title: "AntiCheat Bypass",
-              category: "Обход популярных античитов: NCP, Grim, Spartan",
-              year: "Bypass",
+              title: "Combat Suite",
+              category: "KillAura, AutoClicker, Reach, HitBoxes, Velocity",
+              year: "PvP",
               direction: "left",
+            },
+            {
+              number: "04",
+              title: "AutoConfig",
+              category: "Pre-made configs for every server. One-click ready.",
+              year: "Config",
+              direction: "right",
             },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
@@ -70,7 +77,7 @@ function ProjectCard({
 
   return (
     <div
-      className={`group flex items-center justify-between border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 md:py-8 ${getRevealClass()}`}
+      className={`group flex items-center justify-between border-b border-foreground/10 py-5 transition-all duration-700 hover:border-primary/40 md:py-6 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
         marginLeft: index % 2 === 0 ? "0" : "auto",
@@ -78,17 +85,17 @@ function ProjectCard({
       }}
     >
       <div className="flex items-baseline gap-4 md:gap-8">
-        <span className="font-mono text-sm text-foreground/30 transition-colors group-hover:text-foreground/50 md:text-base">
+        <span className="font-mono text-sm text-primary/60 transition-colors group-hover:text-primary md:text-base">
           {project.number}
         </span>
         <div>
-          <h3 className="mb-1 font-sans text-2xl font-light text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
+          <h3 className="mb-1 font-sans text-2xl font-bold uppercase text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
             {project.title}
           </h3>
           <p className="font-mono text-xs text-foreground/50 md:text-sm">{project.category}</p>
         </div>
       </div>
-      <span className="font-mono text-xs text-foreground/30 md:text-sm">{project.year}</span>
+      <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-primary md:text-xs">{project.year}</span>
     </div>
   )
 }

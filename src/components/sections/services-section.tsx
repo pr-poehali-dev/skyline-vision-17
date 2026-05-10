@@ -14,32 +14,32 @@ export function ServicesSection() {
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Тарифы
+          <h2 className="mb-2 font-sans text-5xl font-bold uppercase tracking-tight text-foreground md:text-6xl lg:text-7xl">
+            Pricing
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Выбери свой план</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary md:text-sm">// Choose your tier</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Пробный — 99₽",
-              description: "3 дня полного доступа. Попробуй все модули без ограничений",
+              title: "Daily — $5",
+              description: "24-hour full access. Test every module before committing.",
               direction: "top",
             },
             {
-              title: "Месяц — 399₽",
-              description: "30 дней. Все модули, автообновления и поддержка в Discord",
+              title: "Monthly — $15",
+              description: "30 days of premium. All modules, all updates, Discord support.",
               direction: "right",
             },
             {
-              title: "Квартал — 999₽",
-              description: "90 дней. Лучшая цена + ранний доступ к новым фичам",
+              title: "Yearly — $60",
+              description: "Best value. 365 days, early access to new features & priority support.",
               direction: "left",
             },
             {
-              title: "Навсегда — 2499₽",
-              description: "Пожизненная лицензия. Все обновления включены навсегда",
+              title: "Lifetime — $120",
+              description: "One payment, forever. All future updates included for life.",
               direction: "bottom",
             },
           ].map((service, i) => (
@@ -86,11 +86,11 @@ function ServiceCard({
       }}
     >
       <div className="mb-3 flex items-center gap-3">
-        <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
-        <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
+        <div className="h-px w-8 bg-primary/40 transition-all duration-300 group-hover:w-12 group-hover:bg-primary" />
+        <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Tier 0{index + 1}</span>
       </div>
-      <h3 className="mb-2 font-sans text-2xl font-light text-foreground md:text-3xl">{service.title}</h3>
-      <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
+      <h3 className="mb-2 font-sans text-2xl font-bold uppercase text-foreground md:text-3xl">{service.title}</h3>
+      <p className="max-w-sm text-sm leading-relaxed text-foreground/70 md:text-base">{service.description}</p>
     </div>
   )
 }

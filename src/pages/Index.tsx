@@ -182,11 +182,11 @@ export default function Index() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#1275d8"
-            colorB="#e19136"
-            speed={0.8}
-            detail={0.8}
-            blend={50}
+            colorA="#0a0a0a"
+            colorB="#dc1f1f"
+            speed={0.6}
+            detail={0.9}
+            blend={60}
             coarseX={40}
             coarseY={40}
             mediumX={40}
@@ -195,19 +195,19 @@ export default function Index() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#0066ff"
-            upColor="#0066ff"
-            downColor="#d1d1d1"
-            leftColor="#e19136"
-            rightColor="#e19136"
-            intensity={0.9}
+            baseColor="#0a0a0a"
+            upColor="#1a0000"
+            downColor="#0a0a0a"
+            leftColor="#dc1f1f"
+            rightColor="#7a0000"
+            intensity={1}
             radius={1.8}
             momentum={25}
             maskType="alpha"
-            opacity={0.97}
+            opacity={0.98}
           />
         </Shader>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       <nav
@@ -219,24 +219,24 @@ export default function Index() {
           onClick={() => scrollToSection(0)}
           className="flex items-center gap-2 transition-transform hover:scale-105"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
-            <span className="font-sans text-xl font-bold text-foreground">⚡</span>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/40 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-primary/30">
+            <span className="font-sans text-xl font-bold text-primary">$</span>
           </div>
-          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">PhantomClient</span>
+          <span className="font-sans text-xl font-bold uppercase tracking-[0.2em] text-foreground">EXPENSIVE</span>
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Возможности", "Тарифы", "О клиенте", "Купить"].map((item, index) => (
+          {["Home", "Features", "Pricing", "About", "Buy"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
-              className={`group relative font-sans text-sm font-medium transition-colors ${
-                currentSection === index ? "text-foreground" : "text-foreground/80 hover:text-foreground"
+              className={`group relative font-mono text-xs font-medium uppercase tracking-[0.2em] transition-colors ${
+                currentSection === index ? "text-primary" : "text-foreground/70 hover:text-foreground"
               }`}
             >
               {item}
               <span
-                className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${
                   currentSection === index ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
@@ -244,8 +244,8 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Купить
+        <MagneticButton variant="primary" onClick={() => scrollToSection(4)}>
+          Get Access
         </MagneticButton>
       </nav>
 
@@ -260,17 +260,18 @@ export default function Index() {
         {/* Hero Section */}
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">⚡ Лучший чит-клиент для Minecraft</p>
+            <div className="mb-4 inline-flex items-center gap-2 animate-in fade-in slide-in-from-bottom-4 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 backdrop-blur-md duration-700">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/90">Premium Minecraft Utility</p>
             </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
+            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-bold uppercase leading-[0.95] tracking-tight text-foreground duration-1000 md:text-8xl lg:text-9xl">
               <span className="text-balance">
-                Phantom Client
+                EXPEN<span className="text-primary">$</span>IVE
               </span>
             </h1>
-            <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
+            <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/80 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Мощный чит-клиент с обходом античита, визуальными хаками и умным ботом. Играй на другом уровне.
+                The most advanced Minecraft utility. Smooth bypass, premium visuals, lightning-fast performance — built for those who want it all.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
@@ -279,17 +280,17 @@ export default function Index() {
                 variant="primary"
                 onClick={() => scrollToSection(4)}
               >
-                Купить сейчас
+                Purchase Now
               </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(2)}>
-                Смотреть тарифы
+              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
+                View Features
               </MagneticButton>
             </div>
           </div>
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500">
             <div className="flex items-center gap-2">
-              <p className="font-mono text-xs text-foreground/80">Листайте вправо</p>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/80">Scroll →</p>
               <div className="flex h-6 w-12 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md">
                 <div className="h-2 w-2 animate-pulse rounded-full bg-foreground/80" />
               </div>
